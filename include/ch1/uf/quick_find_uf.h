@@ -1,15 +1,17 @@
 #pragma once
 #include <exception>
+#include <stdexcept>
 
 #include "uf.h"
 
 namespace Algo {
 
 class QuickFindUF: public UF {
+public:
     QuickFindUF(uint32_t N) : UF(N) {}
     ~QuickFindUF() = default;
 
-    virtual int root(int p) final {
+    virtual int Root(int p) {
         if (p >= id_.size()) {
             throw std::out_of_range("Index out of range!");
         }
@@ -17,13 +19,13 @@ class QuickFindUF: public UF {
         return id_[p];
     }
 
-    virtual bool connected(int p, int q) final {
-        return root(p) == root(q);
+    virtual bool Connected(int p, int q) {
+        return Root(p) == Root(q);
     }
 
-    virtual void union(int p, int q) final {
-        int pId = root(p);
-        int qId = root(q);
+    virtual void Union(int p, int q) {
+        int pId = Root(p);
+        int qId = Root(q);
 
         if (pId == qId) {
             return;
