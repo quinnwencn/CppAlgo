@@ -16,7 +16,7 @@ public:
 
     ~WeightedQuickUnionUF() = default;
 
-    virtual int Root(int p) final {
+    virtual int Root(int p) {
         while (p != id_[p]) {
             p = id_[p];
         }
@@ -28,7 +28,7 @@ public:
         return Root(p) == Root(q);
     }
 
-    virtual void Union(int p, int q) final {
+    virtual void Union(int p, int q) {
         auto pRoot = Root(p);
         auto qRoot = Root(q);
 
@@ -46,7 +46,7 @@ public:
         count_--;
     }
 
- private:
+protected:
     std::vector<int> sz_;
 };
 

@@ -11,7 +11,7 @@ public:
     QuickUnionUF(uint32_t N) : UF(N) {}
     ~QuickUnionUF() = default;
 
-    virtual int Root(int p) final {
+    virtual int Root(int p) {
         if (p >= id_.size()) {
             throw std::out_of_range("Index out of range!");
         }
@@ -27,7 +27,7 @@ public:
         return Root(p) == Root(q);
     }
 
-    virtual void Union(int p, int q) final {
+    virtual void Union(int p, int q) {
         int pRoot = Root(p);
         int qRoot = Root(q);
 
