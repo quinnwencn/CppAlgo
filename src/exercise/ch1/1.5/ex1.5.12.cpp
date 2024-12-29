@@ -15,10 +15,20 @@ public:
     void SetVerbose(bool val) { verbose_ = val; }
 
     virtual int Root(int site) {
+        if (site >= id_.size()) {
+            throw std::out_of_range("Index out of range!");
+        }
+        
         int root = site;
         while (root != id_[root]) {
             root = id_[root];
             accessTimes_ += 2;
+        }
+
+        while (site != id_[site]) {
+            int temp = id_[site];
+            id_[site] = root;
+            site = temp;
         }
 
         accessTimes_++;
