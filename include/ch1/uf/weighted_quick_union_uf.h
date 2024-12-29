@@ -8,12 +8,7 @@ namespace Algo {
 
 class WeightedQuickUnionUF: public UF {
 public:
-    WeightedQuickUnionUF(uint32_t N): UF(N), sz_(N, 0) {
-        for (uint32_t i = 0; i < N; i++) {
-            sz_[i] = 1;
-        }
-    }
-
+    WeightedQuickUnionUF(uint32_t N): UF(N), sz_(N, 1) {}
     ~WeightedQuickUnionUF() = default;
 
     virtual int Root(int p) {
