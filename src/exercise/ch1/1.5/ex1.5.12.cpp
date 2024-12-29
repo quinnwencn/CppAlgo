@@ -25,12 +25,6 @@ public:
             accessTimes_ += 2;
         }
 
-        while (site != id_[site]) {
-            int temp = id_[site];
-            id_[site] = root;
-            site = temp;
-        }
-
         accessTimes_++;
         return root;
     }
@@ -43,7 +37,7 @@ public:
             return;
         }
 
-        id_[p] = qRoot;
+        id_[pRoot] = qRoot;
         count_--;
 
         accessTimes_ += 5;

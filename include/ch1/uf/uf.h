@@ -16,7 +16,7 @@ public:
 
     uint32_t Count() const { return count_; }
     virtual int Root(int p) = 0;
-    virtual bool Connected(int p, int q) = 0;
+    virtual bool Connected(int p, int q) { return Root(p) == Root(q); }
     virtual void Union(int p, int q) = 0;
 
 protected:
