@@ -21,3 +21,6 @@ target_include_directories(ex1.5.13 PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(ex1.5.14 ex1.5.14_weighte_quick_uion_by_height.cpp)
 target_include_directories(ex1.5.14 PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(ex1.5.17 ex1.5.17.cpp)
+target_include_directories(ex1.5.17 PUBLIC ${PROJECT_SOURCE_DIR}/include)
