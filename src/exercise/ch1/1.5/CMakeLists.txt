@@ -24,3 +24,6 @@ target_include_directories(ex1.5.14 PUBLIC ${PROJECT_SOURCE_DIR}/include)
 
 add_executable(ex1.5.17 ex1.5.17.cpp)
 target_include_directories(ex1.5.17 PUBLIC ${PROJECT_SOURCE_DIR}/include)
+
+add_executable(ex1.5.18 ex1.5.18_randomgrid.cpp)
+target_include_directories(ex1.5.18 PUBLIC ${PROJECT_SOURCE_DIR}/include)
