@@ -1,7 +1,8 @@
 find_package(GTest REQUIRED)
 
 file(GLOB_RECURSE TEST_SRCS CONFIGURE_DEPENDS 
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/test_stoptime.cpp)
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/utils/test_stoptime.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/sort/test_selectionsort.cpp)
 
 add_executable(test_algo main.cpp ${TEST_SRCS})
 target_include_directories(test_algo PUBLIC 
